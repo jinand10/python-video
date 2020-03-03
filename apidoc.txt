@@ -1,0 +1,24 @@
+
+api_host: http://127.0.0.1:5000
+api_secret: video@2020@access@token
+
+#抓取视频
+url：{{api_host}}/video?sign=d8b34f280ac3fdbcf754d0344cf4d635
+method: POST
+request_query_params:
+{
+    "sign": "d8b34f280ac3fdbcf754d0344cf4d635" //算法: md5(请求体的json拼接api秘钥)
+}
+request_json_params:
+{
+    "url": "https://v.douyin.com/gWc3BC", //string 视频地址
+    "is_wm": 1 //int 是否加水印 1是 0否
+}
+response:
+{
+  "code": 200, //200为成功  非200 为错误
+  "msg": "success"
+  "data": {
+    "url": "http://127.0.0.1/upload/iswm/6787665342371089675.mp4"
+  }
+}
